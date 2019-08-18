@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<!--
+white_pawn = &#9817;
+white_knight = &#9816;
+white_bishop = &#9815;
+white_rook = &#9814;
+white_queen = &#9813;
+white_king = &#9812;
+
+black_pawn = &#9823;
+black_knight = &#9822;
+black_bishop = &#9821;
+black_rook = &#9820;
+black_queen = &#9819;
+black_king = &#9818;
+-->
+
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="icon" href="./css/favicon.ico">
+    <title>Chess</title>
+  </head>
+
+  <header>
+    <h1>Chess</h1>
+    <div class="arrow-container">
+      <div class="left-arrow"><span id="left-arrow" class="gray">&#x2906;</span></div>
+      <div class="inspiring-message">
+        <h3><em>The game that makes you question your self-worth.</em></h3>
+      </div>
+      <div class="right-arrow"><span id="right-arrow" class="gray">&#x2907;</span></div>
+    </div>
+  </header>
+
+    <body onload="startGame()">
+
+      <div class="top-container">
+        <div class="chessboard-left">
+          <div class="white-promotion-pieces">
+            <span>Select a new piece</span><br>
+            <table>
+              <tr>
+                <td id="white-queen">&#9813;</td>
+                <td id="white-rook">&#9814;</td>
+                <td id="white-bishop">&#9815;</td>
+                <td id="white-knight">&#9816;</td>
+              </tr>
+            </table>
+          </div>
+          <div class="white-timer">
+            <div class="white-timer-title">White: <span class="white-play-stop-button" onclick="whiteTimer()">&#9658;</span>
+              <span class="white-pause-play-button gray"> &#10073;&#10073;</span></div><br>
+            <div class="white-running-timer">
+              <input type="number" min="0" max="9" placeholder="0" id="white-timer-hour">
+              <span>h</span>
+              <input type="number" min="0" max="59" placeholder="00" id="white-timer-minute">
+              <span>m</span>
+              <input type="number" min="0" max="59" placeholder="00" id="white-timer-second">
+              <span>s</span>
+            </div>
+          </div>
+        </div>
+        <table class="chessboard">
+          <tr id="8">
+            <th>8</th>
+            <td id="a8">&#9820;</td>
+            <td id="b8" class="dark">&#9822;</td>
+            <td id="c8">&#9821;</td>
+            <td id="d8" class="dark">&#9819;</td>
+            <td id="e8">&#9818;</td>
+            <td id="f8" class="dark">&#9821;</td>
+            <td id="g8">&#9822;</td>
+            <td id="h8" class="dark">&#9820;</td>
+            <td></td>
+          </tr>
+
+          <tr id="7">
+            <th>7</th>
+            <td id="a7" class="dark">&#9823;</td>
+            <td id="b7">&#9823;</td>
+            <td id="c7" class="dark">&#9823;</td>
+            <td id="d7">&#9823;</td>
+            <td id="e7" class="dark">&#9823;</td>
+            <td id="f7">&#9823;</td>
+            <td id="g7" class="dark">&#9823;</td>
+            <td id="h7">&#9823;</td>
+            <td></td>
+          </tr>
+
+          <tr id="6">
+            <th>6</th>
+            <td id="a6"></td>
+            <td id="b6" class="dark"></td>
+            <td id="c6"></td>
+            <td id="d6" class="dark"></td>
+            <td id="e6"></td>
+            <td id="f6" class="dark"></td>
+            <td id="g6"></td>
+            <td id="h6" class="dark"></td>
+            <td></td>
+          </tr>
+
+          <tr id="5">
+            <th>5</th>
+            <td id="a5" class="dark"></td>
+            <td id="b5"></td>
+            <td id="c5" class="dark"></td>
+            <td id="d5"></td>
+            <td id="e5" class="dark"></td>
+            <td id="f5"></td>
+            <td id="g5" class="dark"></td>
+            <td id="h5"></td>
+            <td></td>
+          </tr>
+
+          <tr id="4">
+            <th>4</th>
+            <td id="a4"></td>
+            <td id="b4" class="dark"></td>
+            <td id="c4"></td>
+            <td id="d4" class="dark"></td>
+            <td id="e4"></td>
+            <td id="f4" class="dark"></td>
+            <td id="g4"></td>
+            <td id="h4" class="dark"></td>
+            <td></td>
+          </tr>
+
+          <tr id="3">
+            <th>3</th>
+            <td id="a3" class="dark"></td>
+            <td id="b3"></td>
+            <td id="c3" class="dark"></td>
+            <td id="d3"></td>
+            <td id="e3" class="dark"></td>
+            <td id="f3"></td>
+            <td id="g3" class="dark"></td>
+            <td id="h3"></td>
+            <td></td>
+          </tr>
+
+          <tr id="2">
+            <th>2</th>
+            <td id="a2">&#9817;</td>
+            <td id="b2" class="dark">&#9817;</td>
+            <td id="c2">&#9817;</td>
+            <td id="d2" class="dark">&#9817;</td>
+            <td id="e2">&#9817;</td>
+            <td id="f2" class="dark">&#9817;</td>
+            <td id="g2">&#9817;</td>
+            <td id="h2" class="dark">&#9817;</td>
+            <td></td>
+          </tr>
+
+          <tr id="1">
+            <th>1</th>
+            <td id="a1" class="dark">&#9814;</td>
+            <td id="b1">&#9816;</td>
+            <td id="c1" class="dark">&#9815;</td>
+            <td id="d1">&#9813;</td>
+            <td id="e1" class="dark">&#9812;</td>
+            <td id="f1">&#9815;</td>
+            <td id="g1" class="dark">&#9816;</td>
+            <td id="h1">&#9814;</td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td></td>
+            <th>a</th>
+            <th>b</th>
+            <th>c</th>
+            <th>d</th>
+            <th>e</th>
+            <th>f</th>
+            <th>g</th>
+            <th>h</th>
+            <td></td>
+          </tr>
+        </table>
+        <div class="chessboard-right">
+          <div class="black-promotion-pieces">
+            <span>Select a new piece</span><br>
+            <table>
+              <tr>
+                <td id="black-queen">&#9819;</td>
+                <td id="black-rook">&#9820;</td>
+                <td id="black-bishop">&#9821;</td>
+                <td id="black-knight">&#9822;</td>
+              </tr>
+            </table>
+          </div>
+          <div class="black-timer">
+            <div class="black-timer-title">Black: <span class="black-stop-button gray">&#9724;</span>
+              <span class="black-pause-play-button gray"> &#10073;&#10073;</span></div><br>
+            <div class="black-running-timer">
+              <input type="number" min="0" max="9" placeholder="0" id="black-timer-hour">
+              <span>h</span>
+              <input type="number" min="0" max="59" placeholder="00" id="black-timer-minute">
+              <span>m</span>
+              <input type="number" min="0" max="59" placeholder="00" id="black-timer-second">
+              <span>s</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+        <div class="bottom-container">
+          <div class="black-taken"></div>
+          <p></p>
+          <div class="white-taken"></div>
+        </div>
+
+      <script type="text/javascript" src="./js/script.js"></script>
+      <script type="text/javascript" src="./js/back_button.js"></script>
+      <script type="text/javascript" src="./js/forward_button.js"></script>
+      <script type="text/javascript" src="./js/white_king_in_check.js"></script>
+      <script type="text/javascript" src="./js/white_king_checkmate.js"></script>
+      <script type="text/javascript" src="./js/black_king_in_check.js"></script>
+      <script type="text/javascript" src="./js/black_king_checkmate.js"></script>
+      <script type="text/javascript" src="./js/black_timer.js"></script>
+      <script type="text/javascript" src="./js/white_timer.js"></script>
+      <script type="text/javascript" src="./js/black_pause.js"></script>
+      <script type="text/javascript" src="./js/white_pause.js"></script>
+      <script type="text/javascript" src="./js/arrow_colors.js"></script>
+
+      <script type="text/javascript" src="./js/pieces/white_pawn.js"></script>
+      <script type="text/javascript" src="./js/pieces/white_knight.js"></script>
+      <script type="text/javascript" src="./js/pieces/white_bishop.js"></script>
+      <script type="text/javascript" src="./js/pieces/white_rook.js"></script>
+      <script type="text/javascript" src="./js/pieces/white_queen.js"></script>
+      <script type="text/javascript" src="./js/pieces/white_king.js"></script>
+      <script type="text/javascript" src="./js/pieces/black_pawn.js"></script>
+      <script type="text/javascript" src="./js/pieces/black_knight.js"></script>
+      <script type="text/javascript" src="./js/pieces/black_bishop.js"></script>
+      <script type="text/javascript" src="./js/pieces/black_rook.js"></script>
+      <script type="text/javascript" src="./js/pieces/black_queen.js"></script>
+      <script type="text/javascript" src="./js/pieces/black_king.js"></script>
+    </body>
+
+</html>

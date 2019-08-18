@@ -1,0 +1,220 @@
+
+
+h1 {
+  text-align: center;
+  width: auto;
+  margin-top: 16px;
+  margin-bottom: 0;
+  cursor: default;
+}
+
+.arrow-container {
+  width: 100%;
+  display: inline-block;
+  cursor: default;
+}
+
+.left-arrow {
+  width: 27%;
+  float: left;
+  text-align: right;
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+.inspiring-message {
+  width: 46%;
+  float: left;
+  text-align: center;
+}
+
+.right-arrow {
+  width: 27%;
+  float: left;
+  text-align: left;
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+.chessboard {
+  width: 60%;
+  float: left;
+  cursor: default;
+}
+
+th, td {
+  text-align: center;
+  height: 50px;
+  width: 50px;
+}
+
+td {
+  font-size: 30px;
+}
+
+.dark {
+  background-color: #ddd;
+  /* background-color: #b38600; */
+}
+
+.selected {
+  box-sizing: border-box;
+  border-radius: 5%;
+  border: 0 solid #fff;
+  box-shadow: inset 0 0 8px red;
+}
+
+.top-container {
+  width: 80%;
+  margin: auto;
+}
+
+.bottom-container {
+  width: 100%;
+  display: inline-block;
+}
+
+p {
+  font-size: 20px;
+  text-align: center;
+  width: 60%;
+  margin: 16px auto;
+  float: left;
+}
+
+.bottom-container div {
+  margin-top: 16px;
+  width: 20%;
+  float: left;
+  font-size: 20px;
+}
+
+.black-taken {
+  text-align: right;
+}
+
+.white-promotion-pieces {
+  display: block;
+  width: 100%;
+  font-size: 25px;
+  text-align: center;
+  cursor: default;
+  visibility: hidden;
+}
+
+.white-promotion-pieces table,
+.black-promotion-pieces table {
+  margin: auto;
+}
+
+.black-promotion-pieces {
+  display: block;
+  width: 100%;
+  font-size: 25px;
+  text-align: center;
+  cursor: default;
+  visibility: hidden;
+}
+
+.black-timer {
+  margin-top: 150px;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.white-timer {
+  margin-top: 150px;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.black-timer-title,
+.white-timer-title {
+  font-size: 18px;
+  position: absolute;
+  cursor: default;
+}
+
+.black-timer-title,
+.black-running-timer {
+  right: 20px;
+}
+
+.white-timer-title,
+.white-running-timer {
+  left: 20px;
+}
+
+.black-running-timer,
+.white-running-timer{
+  position: absolute;
+  top: 28px;
+}
+
+.chessboard-right,
+.chessboard-left {
+  margin-top: 150px;
+  width: 20%;
+  float: left;
+}
+
+.white-play-stop-button,
+.white-pause-play-button,
+.black-stop-button,
+.black-pause-play-button {
+  font-size: 18px;
+}
+
+#white-queen,
+#white-rook,
+#white-bishop,
+#white-knight,
+#black-queen,
+#black-rook,
+#black-bishop,
+#black-knight,
+.left-arrow span,
+.right-arrow span,
+.white-play-stop-button,
+.white-pause-play-button,
+.black-stop-button,
+.black-pause-play-button {
+  transition: 0.2s;
+  cursor: default;
+}
+
+#white-queen:hover,
+#white-rook:hover,
+#white-bishop:hover,
+#white-knight:hover,
+#black-queen:hover,
+#black-rook:hover,
+#black-bishop:hover,
+#black-knight:hover,
+.left-arrow span:hover,
+.right-arrow span:hover,
+.white-play-stop-button:hover,
+.white-pause-play-button:hover,
+.black-stop-button:hover,
+.black-pause-play-button:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #000;
+}
+
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  border: none;
+  font-size: 24px;
+  outline: none;
+  font-family: inherit;
+}
+
+.gray {
+  color: #d3d3d3;
+}
